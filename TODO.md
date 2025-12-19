@@ -1,0 +1,4 @@
+- Edit src/App.tsx to display only "Hello World" with Tailwind classes
+- Remove src/components/JobList.tsx
+- Run the project with npm run dev to verify
+- Update TODO.md to mark tasks complete
