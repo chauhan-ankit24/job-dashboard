@@ -87,16 +87,16 @@
     --sidebar-foreground: 240 5% 65%;
     --sidebar-primary: 252 100% 67%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 6% 10%;
+    --sidebar-accent: 228 13% 14%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 240 6% 15%;
     --sidebar-ring: 252 100% 67%;
     --sidebar-muted: 240 5% 45%;
 
     /* Dashboard specific */
-    --stats-jobs: 252 100% 67%;
-    --stats-applications: 142 76% 36%;
-    --stats-hired: 38 92% 50%;
+    --stats-jobs: 230 44% 29%;
+    --stats-applications: 14 22% 28%;
+    --stats-hired: 120 21% 15%;
     --tag-background: 210 40% 96%;
     --tag-foreground: 215 16% 47%;
   }
@@ -140,9 +140,9 @@
     --sidebar-ring: 252 100% 67%;
     --sidebar-muted: 240 5% 45%;
 
-    --stats-jobs: 252 100% 67%;
-    --stats-applications: 142 76% 36%;
-    --stats-hired: 38 92% 50%;
+    --stats-jobs: 231 44% 29%;
+    --stats-applications: 346 43% 28%;
+    --stats-hired: 186 41% 15%;
     --tag-background: 217 33% 17%;
     --tag-foreground: 215 20% 65%;
   }
