@@ -4,13 +4,16 @@ import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
-  console.log(theme);
   return (
     <Button
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="h-9 w-9 {theme==='dark' ? 'bg-yellow-400/10' : 'bg-gray-800/10'} cursor-pointer"
+      className={`h-9 w-9 cursor-pointer transition ${
+        theme === "dark"
+          ? "bg-white/20 hover:bg-white/30"
+          : "bg-black/20 hover:bg-black/30"
+      }`}
     >
       {theme === "dark" ? (
         <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90" />

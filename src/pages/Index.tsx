@@ -121,7 +121,10 @@ export default function Index() {
                     className={`cursor-pointer gap-0 flex justify-center items-center border-none ${
                       showDrafts ? "bg-[#0032FB]" : "bg-[#000B37]"
                     }`}
-                    onClick={() => setShowDrafts(!showDrafts)}
+                    onClick={() => {
+                      setShowDrafts(!showDrafts);
+                      setShowClosed(false);
+                    }}
                   >
                     <div className="gap-2 h-full text-white flex items-center justify-center">
                       <FileText className="w-4 h-4 text-white" />
@@ -158,7 +161,10 @@ export default function Index() {
                   className={`gap-2 cursor-pointer text-white border-0 ${
                     showClosed ? "bg-[#0032FB]" : "bg-[#1E2027]"
                   }`}
-                  onClick={() => setShowClosed(!showClosed)}
+                  onClick={() => {
+                    setShowClosed(!showClosed);
+                    setShowDrafts(false);
+                  }}
                 >
                   <FileText className="w-4 h-4" />
                   Closed

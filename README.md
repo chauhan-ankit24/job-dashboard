@@ -13,7 +13,7 @@
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/chauhan-ankit24/job-dashboard.git
    cd job-dashboard
    ```
 
@@ -59,11 +59,22 @@
 - Posted times are relative (e.g., "2 hours ago") and not dynamically calculated
 - Draft jobs have zero metrics as they haven't been published yet
 
+## Routes
+
+The application includes the following routes:
+
+- `/`: Home page (`Index.tsx`)
+- `/dashboard`: Dashboard page (`Dashboard.tsx`)
+- `/notifications`: Notifications page (`Notifications.tsx`)
+- `/candidates`: Candidates page (`Candidates.tsx`)
+- `/candidates/shortlisted`: Shortlisted Candidates page (`ShortlistedCandidates.tsx`)
+- `*`: Catch-all route for 404 errors (`NotFound.tsx`)
+
 ## Component Structure Overview
 
 The application follows a modular component architecture:
 
-- **Pages**: Main route components (`Index.tsx`, `NotFound.tsx`)
+- **Pages**: Main route components (`Index.tsx`, `Dashboard.tsx`, `Candidates.tsx`, `ShortlistedCandidates.tsx`, `Notifications.tsx`, `NotFound.tsx`)
 - **Dashboard Components**: Core dashboard functionality
   - `Sidebar.tsx`: Navigation sidebar with collapsible menu
   - `SearchFilters.tsx`: Search and filter controls
