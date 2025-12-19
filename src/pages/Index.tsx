@@ -64,7 +64,7 @@ export default function Index() {
         {/* Header */}
         <div className="flex items-start justify-between mb-8">
           <div>
-            <h1 className="text-2xl lg:text-3xl font-bold text-foreground">
+            <h1 className="text-[32px] tracking-widest lg:text-3xl font-bold text-foreground">
               JOBS
             </h1>
           </div>
@@ -97,14 +97,19 @@ export default function Index() {
               />
               <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between w-full gap-4">
                 <div className="flex items-center gap-3">
-                  <Button variant="outline" className="gap-2">
-                    <FileText className="w-4 h-4" />
-                    Drafts
-                    <span className="bg-muted text-muted-foreground text-xs px-2 py-0.5 rounded-full ml-1">
-                      {draftJobs.length}
-                    </span>
+                  <Button
+                    variant="outline"
+                    className="gap-0 flex justify-center items-center bg-[#000B37] border-none"
+                  >
+                    <div className="gap-2 h-full text-white flex items-center justify-center">
+                      <FileText className="w-4 h-4 text-white" />
+                      Drafts
+                      <span className="text-white text-normal px-2 py-0.5 rounded-full">
+                        {draftJobs.length}
+                      </span>
+                    </div>
                   </Button>
-                  <Button className="gap-2">
+                  <Button className="gap-2 bg-[#0032FB]">
                     <Plus className="w-4 h-4" />
                     Post New Job
                   </Button>
@@ -128,11 +133,11 @@ export default function Index() {
               <div className="flex items-center gap-2">
                 <Button
                   variant="secondary"
-                  className="gap-2 bg-[#1e2330] hover:bg-[#2a3040] text-muted-foreground border-0"
+                  className="gap-2 bg-[#1E2027] cursor-pointer text-white border-0"
                 >
                   <FileText className="w-4 h-4" />
                   Closed
-                  <span className="text-muted-foreground/70">12</span>
+                  <span className="text-white font-bold">12</span>
                 </Button>
               </div>
             </div>

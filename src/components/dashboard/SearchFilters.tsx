@@ -42,17 +42,17 @@ export function SearchFilters({
           placeholder="Enter a job title"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="pl-10 bg-card"
+          className="pl-10 bg-card border-none text-muted-foreground font-semibold text-sm"
         />
       </div>
 
       {/* Filters */}
       <div className="flex gap-3 flex-wrap">
         <Select value={jobProfile} onValueChange={onJobProfileChange}>
-          <SelectTrigger className="w-[140px] bg-card">
+          <SelectTrigger className="w-[140px] text-muted-foreground border-none bg-card">
             <SelectValue placeholder="Job Profile" />
           </SelectTrigger>
-          <SelectContent className="bg-popover">
+          <SelectContent className="bg-popover outline-0 border-0">
             <SelectItem value="all">Job Profile</SelectItem>
             <SelectItem value="design">Design</SelectItem>
             <SelectItem value="engineering">Engineering</SelectItem>
@@ -62,10 +62,10 @@ export function SearchFilters({
         </Select>
 
         <Select value={experience} onValueChange={onExperienceChange}>
-          <SelectTrigger className="w-[140px] bg-card">
+          <SelectTrigger className="w-[140px] text-muted-foreground border-none bg-card">
             <SelectValue placeholder="Experience" />
           </SelectTrigger>
-          <SelectContent className="bg-popover">
+          <SelectContent className="bg-popover outline-0 border-0">
             <SelectItem value="all">Experience</SelectItem>
             <SelectItem value="0-1">Exp 0-1</SelectItem>
             <SelectItem value="1-3">Exp 1-3</SelectItem>
@@ -75,17 +75,17 @@ export function SearchFilters({
         </Select>
 
         <Select value={employmentType} onValueChange={onEmploymentTypeChange}>
-          <SelectTrigger className="w-[150px] bg-card">
+          <SelectTrigger className="w-44 border-none text-muted-foreground bg-card">
             <SelectValue placeholder="Employment Type" />
           </SelectTrigger>
-          <SelectContent className="bg-popover">
+          <SelectContent className="bg-popover outline-0 border-0">
             <SelectItem value="all">Employment Type</SelectItem>
             <SelectItem value="full-time">Full-time</SelectItem>
             <SelectItem value="part-time">Part-time</SelectItem>
             <SelectItem value="contract">Contract</SelectItem>
           </SelectContent>
         </Select>
-        <Button variant="outline" size="icon" onClick={onReset}>
+        <Button variant="outline" size="icon" className="border-none animate-none transition-none bg-card text-muted-foreground" onClick={onReset}>
           <RotateCcw className="h-4 w-4" />
         </Button>
       </div>

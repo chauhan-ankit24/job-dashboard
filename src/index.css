@@ -3,6 +3,52 @@
 @import "tailwindcss";
 @tailwind utilities;
 
+/* Gilroy Font Faces */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Light.woff2') format('woff2'),
+       url('/fonts/Gilroy-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Regular.woff2') format('woff2'),
+       url('/fonts/Gilroy-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Medium.woff2') format('woff2'),
+       url('/fonts/Gilroy-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-SemiBold.woff2') format('woff2'),
+       url('/fonts/Gilroy-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Bold.woff2') format('woff2'),
+       url('/fonts/Gilroy-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @source "./pages/**/*.{ts,tsx}";
 @source "./components/**/*.{ts,tsx}";
 @source "./app/**/*.{ts,tsx}";
@@ -83,7 +129,7 @@
     --radius: 0.75rem;
 
     /* Sidebar - Dark theme */
-    --sidebar-background: 240 10% 4%;
+    --sidebar-background: 210 10% 90%;
     --sidebar-foreground: 240 5% 65%;
     --sidebar-primary: 252 100% 67%;
     --sidebar-primary-foreground: 0 0% 100%;
@@ -102,10 +148,10 @@
   }
 
   .dark {
-    --background: 222 47% 11%;
+    --background: 180 3% 6%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 11%;
+    --card: 210 2% 8%;
     --card-foreground: 210 40% 98%;
 
     --popover: 222 47% 11%;
@@ -118,7 +164,7 @@
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted-foreground: 189 6% 75%;
 
     --accent: 252 100% 67%;
     --accent-foreground: 0 0% 100%;
@@ -130,7 +176,7 @@
     --input: 217 33% 17%;
     --ring: 252 100% 67%;
 
-    --sidebar-background: 240 10% 4%;
+    --sidebar-background: 210 5% 8%;
     --sidebar-foreground: 240 5% 65%;
     --sidebar-primary: 252 100% 67%;
     --sidebar-primary-foreground: 0 0% 100%;
@@ -143,7 +189,7 @@
     --stats-jobs: 231 44% 29%;
     --stats-applications: 346 43% 28%;
     --stats-hired: 186 41% 15%;
-    --tag-background: 217 33% 17%;
+    --tag-background: 210 10% 20%;
     --tag-foreground: 215 20% 65%;
   }
 }
@@ -151,5 +197,6 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
+    font-family: 'Gilroy', sans-serif;
   }
 }

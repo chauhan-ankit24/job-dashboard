@@ -12,15 +12,15 @@ export function StatsCard({ title, value, icon, variant }: StatsCardProps) {
   const variantStyles = {
     jobs: {
       card: "bg-[#293369]",
-      iconBg: "bg-white/20 text-white",
+      iconBg: "bg-[#242C55] text-white",
     },
     applications: {
       card: "bg-[#682938]",
-      iconBg: "bg-white/20 text-white",
+      iconBg: "bg-[#581D2B] text-white",
     },
     hired: {
       card: "bg-[#163235]",
-      iconBg: "bg-white/20 text-white",
+      iconBg: "bg-[#0C2628] text-white",
     },
   };
 
@@ -33,8 +33,8 @@ export function StatsCard({ title, value, icon, variant }: StatsCardProps) {
     >
       <div className="flex items-center justify-between relative z-10">
         <div>
-          <p className="text-sm font-medium text-white/70">{title}</p>
-          <p className="text-3xl font-bold text-white mt-1">{value}</p>
+          <p className="text-sm font-bold text-white/70">{title}</p>
+          <p className="text-[32px] font-bold text-white mt-1">{value}</p>
         </div>
         <div
           className={cn(
