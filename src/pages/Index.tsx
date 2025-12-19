@@ -18,12 +18,15 @@ export default function Index() {
   const [experience, setExperience] = useState("all");
   const [employmentType, setEmploymentType] = useState("all");
   const [showClosed, setShowClosed] = useState(false);
+  const [showDrafts, setShowDrafts] = useState(false);
 
   const handleReset = () => {
     setSearchQuery("");
     setJobProfile("all");
     setExperience("all");
     setEmploymentType("all");
+    setShowClosed(false);
+    setShowDrafts(false);
   };
 
   // Simulate loading delay
@@ -35,7 +38,15 @@ export default function Index() {
   }, []);
 
   const filteredJobs = useMemo(() => {
-    return mockJobs.filter((job) => {
+    let jobsToFilter;
+    if (showDrafts) {
+      jobsToFilter = draftJobs;
+    } else if (showClosed) {
+      jobsToFilter = mockJobs.filter((job) => job.status === "closed");
+    } else {
+      jobsToFilter = mockJobs.filter((job) => job.status === "active");
+    }
+    return jobsToFilter.filter((job) => {
       const matchesSearch = job.title
         .toLowerCase()
         .includes(searchQuery.toLowerCase());
@@ -50,10 +61,18 @@ export default function Index() {
 
       return matchesSearch && matchesEmployment && matchesExperience;
     });
-  }, [searchQuery, jobProfile, experience, employmentType]);
+  }, [
+    searchQuery,
+    jobProfile,
+    experience,
+    employmentType,
+    showDrafts,
+    showClosed,
+  ]);
 
   const totalApplied = mockJobs.reduce((sum, job) => sum + job.applied, 0);
   const totalHired = Math.floor(totalApplied * 0.15);
+  const closedJobsCount = mockJobs.filter(job => job.status === 'closed').length;
 
   return (
     <div className="min-h-screen bg-background">
@@ -76,7 +95,7 @@ export default function Index() {
         ) : (
           <>
             {/* Stats Cards */}
-            <div className="flex w-full gap-4 mb-8">
+            <div className="flex w-full flex-wrap xl:flex-nowrap gap-4 mb-8">
               <StatsCard
                 title="Total Jobs Posted"
                 value={mockJobs.length}
@@ -99,7 +118,10 @@ export default function Index() {
                 <div className="flex items-center gap-3">
                   <Button
                     variant="outline"
-                    className="gap-0 flex justify-center items-center bg-[#000B37] border-none"
+                    className={`cursor-pointer gap-0 flex justify-center items-center border-none ${
+                      showDrafts ? "bg-[#0032FB]" : "bg-[#000B37]"
+                    }`}
+                    onClick={() => setShowDrafts(!showDrafts)}
                   >
                     <div className="gap-2 h-full text-white flex items-center justify-center">
                       <FileText className="w-4 h-4 text-white" />
@@ -109,7 +131,7 @@ export default function Index() {
                       </span>
                     </div>
                   </Button>
-                  <Button className="gap-2 bg-[#0032FB]">
+                  <Button className="gap-2 cursor-pointer bg-[#0032FB]">
                     <Plus className="w-4 h-4" />
                     Post New Job
                   </Button>
@@ -118,7 +140,7 @@ export default function Index() {
             </div>
 
             {/* Search & Filters */}
-            <div className="mb-6 flex justify-between items-center">
+            <div className="mb-6 flex flex-wrap gap-2 justify-between items-center">
               <SearchFilters
                 searchQuery={searchQuery}
                 onSearchChange={setSearchQuery}
@@ -132,12 +154,15 @@ export default function Index() {
               />
               <div className="flex items-center gap-2">
                 <Button
-                  variant="secondary"
-                  className="gap-2 bg-[#1E2027] cursor-pointer text-white border-0"
+                  variant="outline"
+                  className={`gap-2 cursor-pointer text-white border-0 ${
+                    showClosed ? "bg-[#0032FB]" : "bg-[#1E2027]"
+                  }`}
+                  onClick={() => setShowClosed(!showClosed)}
                 >
                   <FileText className="w-4 h-4" />
                   Closed
-                  <span className="text-white font-bold">12</span>
+                  <span className="text-white font-bold">{closedJobsCount}</span>
                 </Button>
               </div>
             </div>

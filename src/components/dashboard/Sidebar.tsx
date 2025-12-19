@@ -114,7 +114,7 @@ export function Sidebar() {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 px-3 overflow-y-auto">
+        <nav className="flex-1 px-3 space-y-1 overflow-y-auto">
           {navItems.map((item) => (
             <div key={item.label}>
               {item.children ? (
@@ -122,7 +122,7 @@ export function Sidebar() {
                   <button
                     onClick={() => toggleExpand(item.label)}
                     className={cn(
-                      "w-full flex items-center justify-between p-4 rounded-lg text-sm font-medium transition-colors",
+                      "w-full flex items-center cursor-pointer justify-between p-4 rounded-lg text-sm font-medium transition-colors",
                       isParentActive(item)
                         ? "bg-sidebar-accent text-sidebar-accent-foreground"
                         : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
@@ -155,10 +155,10 @@ export function Sidebar() {
                             to={child.href}
                             onClick={() => setIsMobileOpen(false)}
                             className={cn(
-                              "flex items-center justify-between p-4 rounded-lg text-sm transition-colors",
+                              "flex items-center cursor-pointer justify-between p-4 rounded-lg text-sm transition-colors",
                               isActive(child.href)
-                                ? "text-primary  font-medium"
-                                : "text-sidebar-foreground hover:text-sidebar-accent-foreground"
+                                ? "bg-sidebar-accent text-sidebar-accent-foreground"
+                                : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                             )}
                           >
                             <div className="flex items-center gap-3">
@@ -178,7 +178,7 @@ export function Sidebar() {
                                   }
                                 />
                               )}
-                              <span>{child.label}</span>
+                              <span className="mr-10">{child.label}</span>
                             </div>
                             {child.badge && (
                               <span className="bg-[#2A2A2A] text-white text-xs px-2 py-0.5 rounded-full">

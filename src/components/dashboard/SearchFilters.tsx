@@ -49,7 +49,7 @@ export function SearchFilters({
       {/* Filters */}
       <div className="flex gap-3 flex-wrap">
         <Select value={jobProfile} onValueChange={onJobProfileChange}>
-          <SelectTrigger className="w-[140px] text-muted-foreground border-none bg-card">
+          <SelectTrigger className="w-[140px] cursor-pointer text-muted-foreground border-none bg-card">
             <SelectValue placeholder="Job Profile" />
           </SelectTrigger>
           <SelectContent className="bg-popover outline-0 border-0">
@@ -62,7 +62,7 @@ export function SearchFilters({
         </Select>
 
         <Select value={experience} onValueChange={onExperienceChange}>
-          <SelectTrigger className="w-[140px] text-muted-foreground border-none bg-card">
+          <SelectTrigger className="w-[140px] cursor-pointer text-muted-foreground border-none bg-card">
             <SelectValue placeholder="Experience" />
           </SelectTrigger>
           <SelectContent className="bg-popover outline-0 border-0">
@@ -75,7 +75,7 @@ export function SearchFilters({
         </Select>
 
         <Select value={employmentType} onValueChange={onEmploymentTypeChange}>
-          <SelectTrigger className="w-44 border-none text-muted-foreground bg-card">
+          <SelectTrigger className="w-44 border-none cursor-pointer text-muted-foreground bg-card">
             <SelectValue placeholder="Employment Type" />
           </SelectTrigger>
           <SelectContent className="bg-popover outline-0 border-0">
@@ -85,7 +85,7 @@ export function SearchFilters({
             <SelectItem value="contract">Contract</SelectItem>
           </SelectContent>
         </Select>
-        <Button variant="outline" size="icon" className="border-none animate-none transition-none bg-card text-muted-foreground" onClick={onReset}>
+        <Button variant="outline" size="icon" className="border-none cursor-pointer animate-none transition-none bg-card text-muted-foreground" onClick={onReset}>
           <RotateCcw className="h-4 w-4" />
         </Button>
       </div>
